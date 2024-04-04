@@ -4,9 +4,9 @@ query <- function(url_params, ...){
   if(grepl(x = url_params, pattern = "http")){
     url <- url_params
   } else {
-    url <- paste0("http://swapi.co/api", url_params)
+    url <- paste0("https://swapi.py4e.com/api/", url_params)
   }
-  result <- GET(url, user_agent("rwars - https://github.com/Ironholds/rwars"), ...)
+  result <- GET(url, user_agent("rwars - https://github.com/durraniu/rwars"), ...)
   stop_for_status(result)
   return(content(result))
 }
